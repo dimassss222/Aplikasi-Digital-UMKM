@@ -152,11 +152,6 @@
       flex-wrap:wrap;
       margin-top:14px;
     }
-    .hero-note{
-      margin-top:14px;
-      color: var(--muted);
-      font-size: 13px;
-    }
     .hero-card{
       border:1px solid var(--border);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -218,6 +213,15 @@
       background: linear-gradient(135deg, var(--primary), var(--primary2));
       flex:0 0 auto;
     }
+    .hero-img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:14px;
+      margin: 8px 0 12px;
+      border:1px solid rgba(255,255,255,.12);
+      opacity:.95;
+    }
 
     /* SECTIONS */
     section{padding:34px 0}
@@ -272,6 +276,44 @@
     .feature h4{margin:0 0 6px; font-size:15px}
     .feature p{margin:0; color: var(--muted); font-size:13.5px}
 
+    /* GALLERY */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid var(--border);
+      background:#000;
+      box-shadow:0 16px 40px rgba(0,0,0,.25);
+    }
+    .gallery-item img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      transition:.35s ease;
+      opacity:.9;
+      display:block;
+    }
+    .gallery-item span{
+      position:absolute;
+      bottom:0;
+      left:0;
+      right:0;
+      padding:10px 14px;
+      font-weight:800;
+      font-size:14px;
+      background:linear-gradient(to top, rgba(0,0,0,.78), transparent);
+      color:#fff;
+    }
+    .gallery-item:hover img{
+      transform:scale(1.06);
+      opacity:1;
+    }
+
     /* CTA */
     .cta{
       border:1px solid var(--border);
@@ -308,12 +350,14 @@
     @media (max-width: 920px){
       .hero-grid{grid-template-columns:1fr; }
       .features{grid-template-columns:repeat(2, 1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr);}
     }
     @media (max-width: 560px){
       .nav-links{display:none}
       .kpi{grid-template-columns:1fr}
       .grid-2{grid-template-columns:1fr}
       .features{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -330,6 +374,7 @@
       <nav class="nav-links" aria-label="Navigasi">
         <a href="#problem">Masalah</a>
         <a href="#solution">Solusi</a>
+        <a href="#gallery">Oleh-oleh</a>
         <a href="#features">Fitur</a>
         <a href="#cta">Daftar</a>
       </nav>
@@ -358,10 +403,6 @@
           <a class="btn" href="#cta">Daftarkan Produk UMKM</a>
           <a class="btn" href="#problem">Pelajari Selengkapnya</a>
         </div>
-
-        <div class="hero-note">
-          *Draft landing page — tombol CTA bisa diarahkan ke halaman katalog/pendaftaran/WhatsApp admin.
-        </div>
       </div>
 
       <aside class="hero-card" aria-label="Ringkasan manfaat PADI JABAR">
@@ -369,6 +410,13 @@
         <p style="margin:0; color: rgba(229,231,235,.86); font-size:14px;">
           PADI JABAR membantu UMKM lebih terlihat, dan memudahkan masyarakat menemukan produk khas Jabar secara cepat.
         </p>
+
+        <!-- GAMBAR HERO (OLEH-OLEH) -->
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=70"
+          alt="Oleh-oleh khas Jawa Barat"
+        />
 
         <div class="kpi">
           <div class="kpi-item">
@@ -437,6 +485,38 @@
         <div class="card">
           <h3>Meningkatkan kepercayaan</h3>
           <p>Setiap produk dapat menampilkan profil UMKM, asal daerah, dan cerita produk untuk memperkuat nilai lokal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Oleh-oleh Khas Jawa Barat</h2>
+      <p class="section-sub">
+        Contoh produk unggulan UMKM Jawa Barat yang bisa ditampilkan dalam PADI JABAR sebagai etalase online.
+      </p>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1604908554264-7baf7c24c47a?auto=format&fit=crop&w=1200&q=70" alt="Dodol Garut">
+          <span>Dodol Garut</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1603046891726-36bfd957e0bf?auto=format&fit=crop&w=1200&q=70" alt="Peuyeum Bandung">
+          <span>Peuyeum Bandung</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=1200&q=70" alt="Keripik Singkong">
+          <span>Keripik Singkong</span>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1598514982205-fc8a1b0f6b47?auto=format&fit=crop&w=1200&q=70" alt="Oleh-oleh UMKM Lokal">
+          <span>Oleh-oleh UMKM Lokal</span>
         </div>
       </div>
     </div>
